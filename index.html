@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeEdit | Edit HTML, CSS, and Javascript</title>
+  <meta name="description" content="Write code easily like HTML, CSS, and JavaScript. Made for Beginners...">
+  <meta name="keywords" content="code editor, html, css, javascript, programming, coding, web development">
+  <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--Will add this modal on load for few remembers to client-->
+  <div class="modal fade" id="modal-onload" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Remember:</h1>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Do not reload or remove this page, because it will lose your work.</li>
+            <li>This editor was made for beginners that want to improve their skills in vanilla HTML, CSS, and JavaScript.</li>
+            <li>More programming languages will be supported soon! eg. (C/C++)</li>
+            <li>Happy Coding!</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Navigation bar-->
+  <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">CodeEdit</a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navUl"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navUl">
+        <ul class="navbar-nav ms-auto">
+          <li class="navbar-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#about" href="#">About</a>
+          </li>
+          <li class="navbar-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#tutorials" href="#">Tutorials</a>
+          </li>
+          <li class="navbar-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#settings" href="#">Settings</a>
+          </li>
+          <li class="navbar-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#credits" href="#">Credits</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Here is the modals for nav-links-->
+  <!--About-->
+  <div class="modal fade" id="about">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">About</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          CodeEdit is an online code editor made for beginners to practice their skills with basic HTML, CSS, and Javascript. <br>Note: CodeEdit is not made for big projects.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Tutorial-->
+  <div class="modal fade" id="tutorials">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Tutorials</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          If you're just getting started, you can find tutorial here
+          <h2>Websites:</h2>
+          <a href="https://www.w3schools.com/">w3schools.com</a><br>
+          <a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>
+          <h2>Youtube Tutorials:</h2>
+          <a href="https://youtu.be/pQN-pnXPaVg">freeCodeCamp: HTML Full Course</a>
+          <a href="https://youtu.be/1Rs2ND1ryYc">freeCodeCamp: CSS tutorial: From Zero to Hero (Full Course)</a>
+          <a href="https://youtu.be/PkZNo7MFNFg">freeCodeCamp: JavaScript - Full Course for beginners</a>
+          <h2>PDF Books:</h2>
+          <a href="https://books.goalkicker.com/HTML5Book/">HTML5 Book</a><br>
+          <a href="https://books.goalkicker.com/CSSBook/">CSS Book</a><br>
+          <a href="https://books.goalkicker.com/JavaScriptBook/">JavaScript Book</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Settings-->
+  <div class="modal fade" id="settings" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Settings</h1>
+        </div>
+        <div class="modal-body settings-body">
+          <!--Theme-->
+          <label class="settings-content">
+            Themes:
+            <select class="form-select theme-select">
+              <option value="Monokai" selected>Monokai</option>
+              <option value="Ambiance">Ambiance</option>
+              <option value="Chrome">Chrome</option>
+              <option value="Dracula">Dracula</option>
+              <option value="Github">Github</option>
+              <option value="Merbivore">Merbivore</option>
+              <option value="Twilight">Twilight</option>
+            </select>
+          </label>
+          <!--Font Size-->
+          <label class="settings-content">
+            Font Size: <p class="font-size-value"></p>
+            <input type="range" class="form-range font-size-range" min="8" max="20">
+          </label>
+          <!--Wrapping-->
+          <label class="settings-content">
+            Wrap: <select class="form-select wrap-settings"><option value="True" selected>True</option><option value="False">False</option></select>
+          </label>
+          <label class="settings-content">
+            Autocomplete: <select class="form-select autocomplete-settings"><option value="True" selected>True</option><option value="False">False</option></select>
+          </label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Credits-->
+  <div class="modal fade" id="credits">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">Credits</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Made with ❤️ by Matt Henry Buenaventura<br>
+          Visit me at:
+          <a href="https://www.facebook.com/matthenry.20051005">Facebook</a>, <a></a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!--Here we we will add textarea for HTML, CSS, and JAVASCRIPT-->
+    <!--We will create a bootstrap tabs-->
+    <div class="run-and-dl-container">
+      <button type="button" class="run-btn">Run</button>
+      <button type="button" class="download-btn">Download</button>
+    </div>
+    <p class="dl-note" style="display: none;">Note: 3 files will be downloaded: <code>index.js</code>, <code>style.css</code>, <code>main.js</code>.<button class="html-file-dl">index.html</button><button class="css-file-dl">style.css</button><button class="js-file-dl">main.js</button></p>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <button type="button" class="nav-link btn-tab active" data-bs-toggle="tab" data-bs-target="#html">HTML</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-link btn-tab" data-bs-toggle="tab" data-bs-target="#css">CSS</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-link btn-tab" data-bs-toggle="tab" data-bs-target="#javascript">JavaScript</button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="html">
+        <textarea id="html-edit"></textarea>
+      </div>
+      <div class="tab-pane fade" id="css">
+        <textarea id="css-edit"></textarea>
+      </div>
+      <div class="tab-pane fade" id="javascript">
+        <textarea id="javascript-edit"></textarea>
+      </div>
+    </div>
+    <div class="output-heading-container">
+      <h1 class="output-heading">Preview</h1>
+    </div>
+    <div class="iframe-container">
+      <iframe id="iframe-preview" class="preview" style="display: none;"></iframe>
+    </div>
+  </div>
+  <noscript>
+    <style>
+      h1 {
+        position: absolute;
+        background: #fff;
+        height: 100%;
+        width: 100vw;
+        top: 0;
+        z-index: 9999;
+      }
+    </style>
+    <h1 class="no-script">This website can't run without JavaScript. Turn on JavaScript in your browser settings.</h1>
+  </noscript>
+  <script src="src-min-noconflict/ace.js"></script>
+  <script src="src-min-noconflict/ext-language_tools.js"></script>
+  <script src="Bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="FileSaver/FileSaver.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
